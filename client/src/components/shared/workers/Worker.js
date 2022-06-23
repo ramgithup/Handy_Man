@@ -1,17 +1,18 @@
 import { useState } from "react";
 import WorkerForm from "./WorkerForm";
 
-const Worker = ({id, first_name, last_name, image, updateWorker}) =>{
- const [editing,setEdit] = useState(false)
+
+const Worker = ({id, f_name, l_name, picture, updateWorker}) =>{
+ const [editing, setEdit] = useState(false)
  return (
   <>
     {editing ?
     <>
      <WorkerForm
      id={id}
-     first_name={first_name}
-     last_name={last_name}
-     image={image}
+     first_name={f_name}
+     last_name={l_name}
+     image={picture}
      updateWorker={updateWorker}
      setEdit={setEdit}
      
@@ -22,8 +23,8 @@ const Worker = ({id, first_name, last_name, image, updateWorker}) =>{
    :
     <>
      <div>
-       <img  src={image} />
-       <h3>{first_name}{last_name}</h3>
+       <img  src={picture} />
+       <h3>{f_name}{l_name}</h3>
        <button onClick={() => setEdit(true)}>Edit</button>
        <hr />
      </div>

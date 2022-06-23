@@ -4,12 +4,12 @@ import Home from './components/shared/home/Home';
 import NavBar from './components/shared/Navbar';
 import Nomatch from './components/shared/NoMatch'
 import Team from './components/shared/team/Team'
-import Workers from './components/shared/workers/Workers1';
+import Workers from './components/shared/workers/Workers';
 //import About from './components/shared/about/About';
 
 const App = () => (
   <>
-  <>
+  
     <NavBar />
   <Routes>
     <Route path='/' element={<Home />} />
@@ -19,7 +19,7 @@ const App = () => (
   </Routes>
 
   
-</>
+
   </>
 )
 

@@ -31,19 +31,9 @@ class Api::WorksController < ApplicationController
     render json: { message: 'work Deleted' }
   end
 
-  private 
-    # { work: { f_name: '', l_name: " ", picture: '' } }
-    def work_params
-      params.require(:work).permit(:f_name, :l_name :picture)
-    end
-
-    def set_work
-      @work = Work.find(params[:id])
-    end
-  # end
   private
     def work_params
-      params.require(:work).permit( :f_name, :l_name, :picture)
+      params.require(:worker).permit( :f_name, :l_name, :picture)
     end
 
     def set_work

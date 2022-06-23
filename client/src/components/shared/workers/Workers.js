@@ -7,13 +7,13 @@ const Workers = () => {
   const [workers,setWorkers] = useState([])
 
   useEffect( () => {
-    axios.get('/api/workers')
+    axios.get('/api/works')
     .then( res => setWorkers(res.data))
     .catch( err => console.log(err))
   }, [])
 
   const addWorker = (worker) => {
-   axios.post('/api/workers',{ worker })
+   axios.post('/api/works',{ worker })
       .then( res => {
         setWorkers([...workers, res.data])
       })
@@ -22,7 +22,7 @@ const Workers = () => {
 
   const updateWorker = (id, worker) => {
     console.log (id)
-    axios.put(`/api/workers/${id}`,{ worker })
+    axios.put(`/api/works/${id}`,{ worker })
      .then( res =>{
        let newUpdatedWorkers = workers.map( w => {
          if (w.id === id) {
